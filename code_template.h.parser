@@ -1,0 +1,14 @@
+#ifndef Y_TAB_H_
+#define Y_TAB_H_
+
+%token_definition
+
+//%head_code start
+%head_code
+//%head_code end
+
+%union_definition
+
+%yyparse_declaration
+
+#endif

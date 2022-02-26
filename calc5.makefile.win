@@ -1,0 +1,19 @@
+rebuild: clean calc5.exe run
+
+calc5.exe: calc5.tab.h calc5.lexer.h calc5.tab.c calc5.lexer.c
+	cl /Fecalc5.exe calc5.tab.c calc5.lexer.c
+
+calc5.lexer.c calc5.lexer.h: calc5.tab.h calc5.l 
+	flex --wincompat --header-file=calc5.lexer.h --outfile=calc5.lexer.c calc5.l	
+
+calc5.tab.c calc5.tab.h: LALRParserGenerator.exe
+	LALRParserGenerator -v -d -b calc5 calc5.y
+
+LALRParserGenerator.exe:
+	cl /O2 LALRParserGenerator.cpp
+
+run:
+	calc5.exe test.txt
+
+clean:
+	del calc5.lexer.h calc5.lexer.c calc5.tab.h calc5.tab.c calc5.lexer.obj calc5.tab.obj calc5.exe
