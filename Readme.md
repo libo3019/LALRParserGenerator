@@ -26,7 +26,7 @@ LALRParserGenerator doesn't limit any lexical scanner's mode that you use as lon
 you provide a adaptable function whose prototype is written in c code template file or a generated c code.
 
 LALRParserGenerator can infer any symbol's type, a non terminal symbol or a terminal symbol,
-which is useful when a developer want to verify a language's grammar file.
+which is useful when a developer wants to verify a language's grammar file.
 
 All examples are provided, which can run corrently.
 
