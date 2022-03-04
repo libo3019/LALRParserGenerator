@@ -13,7 +13,7 @@ the index wrongly.
 
 LALRParserGenerator can use the name of a symbol or its alias to refer the symbol's value.
 
-Lemon doesn't allow a developer to define a start symbol which can occur at the right side.
+Lemon doesn't allow a developer to define a start symbol which can occur in the right side.
 LALRParserGenerator has no such restriction.
 
 LALRParserGenerator provides two kinds of using mode: reentrant mode and non-reentrant mode.
@@ -22,8 +22,11 @@ One of reentrant mode is like lemon, but tokens and non terminal symbols use sam
 
 Another reentrant mode is like yacc/bison, but you must provide a adaptable function to adapt any lexical scanner of reentrant flex mode or your customized reentrant lexical scanner.
 
-LALRParserGenerator doesn't restrict any lexical scanner's mode that you use as long as 
-you provide a adaptable function whose prototype is written at c code template file or a generated c code.
+LALRParserGenerator doesn't limit any lexical scanner's mode that you use as long as 
+you provide a adaptable function whose prototype is written in c code template file or a generated c code.
+
+LALRParserGenerator can infer any symbol's type, a non terminal symbol or a terminal symbol,
+which is useful when a developer want to verify a language's grammar file.
 
 All examples are provided, which can run corrently.
 
