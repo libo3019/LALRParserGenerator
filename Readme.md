@@ -37,5 +37,5 @@ LALRParserGenerator [-vld] [-b prefix] [-L path] [-y prefix] [-Y prefix] yacc_fi
 -b: Specify the prefix of output filename<br>
 -Y: Specify "Y" prefix used by YYSTYPE and etc.<br>
 -y: Specify "y" prefix used by yyunion and etc.<br>
--L: code template files' searching path<br>
--l: Not create #line instruction.<br>
+-L: Specify code template files' searching path<br>
+-l: Not create #line instructions.<br>
