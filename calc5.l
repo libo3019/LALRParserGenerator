@@ -28,7 +28,7 @@ int yywrap(yyscan_t yyscanner)
     return 1;
 }
 
-int yy_lex_reentrant(void *scanner, YYSTYPE* val)
+int yylex_reentrant(void *scanner, YYSTYPE* val)
 {
 	int tok_type = yylex(scanner);
 	*val = yyget_extra(scanner)->val;	

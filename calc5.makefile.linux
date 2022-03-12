@@ -1,0 +1,19 @@
+rebuild: clean calc5 run
+
+calc5: calc5.tab.h calc5.lexer.h calc5.tab.c calc5.lexer.c
+	gcc -o calc5 calc5.tab.c calc5.lexer.c
+
+calc5.lexer.c calc5.lexer.h: calc5.tab.h calc5.l 
+	flex --header-file=calc5.lexer.h --outfile=calc5.lexer.c calc5.l	
+
+calc5.tab.c calc5.tab.h: LALRParserGenerator
+	LALRParserGenerator -v -d -b calc5 calc5.y
+
+LALRParserGenerator:
+	g++ -O2 -o LALRParserGenerator LALRParserGenerator.cpp
+
+run:
+	./calc5 test.txt
+
+clean:
+	rm -f calc5.lexer.h calc5.lexer.c calc5.tab.h calc5.tab.c calc5.lexer.o calc5.tab.o calc5

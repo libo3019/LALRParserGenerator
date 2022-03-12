@@ -140,7 +140,7 @@ void yy_parser_free(void *ctx)
 /*
 reentrant mode:
 %scanner_param {void* scanner}
-int yy_lex_reentrant(void *scanner, YYSTYPE* val)
+int yylex_reentrant(void *scanner, YYSTYPE* val)
 
 non-reentrant mode:
 YYSTYPE yylval;
@@ -171,7 +171,7 @@ int yyparse(%parser_params(""))
 				n = yyadsp[s];
 				if (tk < 0 && n > -yyntoks)
 				{
-					/*tk = yytrns[yy_lex_reentrant(scanner, &yylval)]; or
+					/*tk = yytrns[yylex_reentrant(scanner, &yylval)]; or
 					  tk = yytrns[yylex()];
 					*/
 					%scanner_call_statement 					

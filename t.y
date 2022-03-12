@@ -46,6 +46,7 @@ int
 yyerror()
 {
 	puts("oops");
+	return 0;
 }
 
 int

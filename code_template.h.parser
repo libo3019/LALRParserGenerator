@@ -1,5 +1,4 @@
-#ifndef Y_TAB_H_
-#define Y_TAB_H_
+#pragma once
 
 %token_definition
 
@@ -10,5 +9,3 @@
 %union_definition
 
 %yyparse_declaration
-
-#endif

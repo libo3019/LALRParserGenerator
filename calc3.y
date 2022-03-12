@@ -20,7 +20,7 @@ expr: INT
 	 | expr '-' expr { $$ = $1 - $3; }
     | expr '/' expr { $$ = $1 / $3; } ;
 %%
-int yy_lex_reentrant(struct Scanner* scanner, YYSTYPE * yylval) {    /* crude lexer */
+int yylex_reentrant(struct Scanner* scanner, YYSTYPE * yylval) {    /* crude lexer */
 	int c = getchar();
 	if (c >= '0' && c <= '9') {
 		*yylval = c-'0';
